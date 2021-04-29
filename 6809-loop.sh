@@ -7,8 +7,8 @@ echo "6809-Assembly"
 PS3="
 Pick an option: "
 options=(
-    "Full Assembly to Compiled Hex - LOOP"
-    "Full Compiled Hex to Assembly - LOOP"
+    "Full Assembly to Compiled Hex"
+    "Full Compiled Hex to Assembly"
     "Opcode Assembly to Compiled Hex"
     "Opcode Compiled Hex to Assembly"
     "Post-byte Assembly to Compiled Hex"
@@ -17,7 +17,7 @@ options=(
 while [ true ]; do
     select option in "${options[@]}"; do
         case "$option" in
-        "Full Assembly to Compiled Hex - LOOP")
+        "Full Assembly to Compiled Hex")
             echo -n "Enter Assembly: "
             read input
             echo ""
@@ -25,7 +25,7 @@ while [ true ]; do
             echo ""
             break
             ;;
-        "Full Compiled Hex to Assembly - LOOP")
+        "Full Compiled Hex to Assembly")
             echo -n "Enter Hex: "
             read input
             echo ""
