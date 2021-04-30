@@ -7,17 +7,35 @@ echo "Hex"
 PS3="
 Pick an option: "
 options=(
+    "bin2Hex"
+    "hex2Bin"
     "hex2Dec"
     "ensureHex"
 )
 while [ true ]; do
     select option in "${options[@]}"; do
         case "$option" in
-        "hex2Dec")
+        "bin2Hex")
             echo -n "Enter Input: "
             read input
             echo ""
             node "$HERE"/hex.js 1 "$input"
+            echo ""
+            break
+            ;;
+        "hex2Bin")
+            echo -n "Enter Input: "
+            read input
+            echo ""
+            node "$HERE"/hex.js 2 "$input"
+            echo ""
+            break
+            ;;
+        "hex2Dec")
+            echo -n "Enter Input: "
+            read input
+            echo ""
+            node "$HERE"/hex.js 3 "$input"
             echo ""
             break
             ;;
@@ -27,7 +45,7 @@ while [ true ]; do
             echo -n "Enter numBytes: "
             read numb
             echo ""
-            node "$HERE"/hex.js 2 "$input" "$numb"
+            node "$HERE"/hex.js 4 "$input" "$numb"
             echo ""
             break
             ;;
